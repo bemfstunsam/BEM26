@@ -45,10 +45,10 @@ CREATE TABLE IF NOT EXISTS admin (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ============================================================
---  Data Awal: admin (password: admin123)
+--  Data Awal: admin (ubah password segera setelah setup via admin panel)
 -- ============================================================
 INSERT IGNORE INTO admin (username, password, nama) VALUES 
-('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Administrator BEM FST');
+('admin', '$2y$10$zSanRJik8CsZZgTyT6AQ4.MpDpwqzzZ/ntxP7O.dGeVekMk5hAa6W', 'Administrator BEM FST');
 
 -- ============================================================
 --  Data Awal: berita

@@ -1,0 +1,69 @@
+# ============================================================
+#  BEM FST UNSAM -- SUIC 2026 / IDC Registration Website
+#  .gitignore
+# ============================================================
+
+# ---- Environment files and secrets -------------------------
+.env
+.env.*
+!.env.example
+
+# ---- PHP dependencies (if Composer is added later) ----------
+/vendor/
+
+# ---- User-uploaded participant documents --------------------
+# The uploads/ directory contains real participant files
+# (identity letters, payment proofs, proposals).
+# The .htaccess security configuration inside uploads/ IS
+# tracked and required -- only its contents are excluded.
+/uploads/suic/
+/uploads/*.pdf
+/uploads/*.jpg
+/uploads/*.jpeg
+/uploads/*.png
+/uploads/*.webp
+
+# ---- Database dumps and ad-hoc backups ----------------------
+# NOTE: The config/*.sql files are version-controlled schema
+# migrations and are intentionally kept tracked.
+# Only exclude dump files and ad-hoc backups:
+*.dump
+*.bak
+*_backup.sql
+*_dump.sql
+*_export.sql
+
+# ---- Setup / maintenance helpers that must not go to prod ---
+# This file should be deleted from the server after use,
+# but is excluded here as a safety net.
+fix_admin_pw.php
+
+# ---- Logs ---------------------------------------------------
+*.log
+logs/
+log/
+error_log
+
+# ---- Cache and temporary files ------------------------------
+cache/
+.cache/
+tmp/
+temp/
+*.tmp
+*.temp
+
+# ---- PHP IDE / build artifacts ------------------------------
+.phpunit.result.cache
+.phpunit.cache/
+
+# ---- Operating system files ---------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ---- IDE / editor project files -----------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

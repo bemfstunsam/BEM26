@@ -1,0 +1,63 @@
+# ============================================================
+# Security Configuration for Uploads Directory (SUIC 2026)
+# Directory: /uploads/suic/
+# ============================================================
+
+# 1. Matikan eksekusi script PHP dan CGI
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+# Hapus handler script executable
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .asp .aspx .shtml .sh .bat .exe
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .asp .aspx .shtml .sh .bat .exe
+SetHandler default-handler
+
+# 2. Nonaktifkan directory listing (indeks folder) dan eksekusi CGI
+Options -Indexes -ExecCGI
+
+# 3. Blokir semua akses ke file executable / script sensitif
+<FilesMatch "(?i)\.(php|phtml|php[0-9]|phps|phar|inc|cgi|pl|py|sh|bash|bat|cmd|exe|com|dll|bin|vbs|js|jar|wsf|scr|msi|ps1|asp|aspx|jsp|shtml)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 4. Blokir akses ke file konfigurasi dan dotfiles (.ht*, .git, dll)
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 5. Whitelist ketat: Hanya izinkan ekstensi dokumen resmi (PDF, JPG, JPEG, PNG, WEBP)
+<FilesMatch "(?i)\.(pdf|jpg|jpeg|png|webp)$">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Allow,Deny
+        Allow from all
+    </IfModule>
+</FilesMatch>
+
+# 6. Header keamanan (Cegah MIME Sniffing & indexing search engine)
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Robots-Tag "noindex, nofollow, noarchive"
+    Header set Content-Disposition "attachment"
+</IfModule>

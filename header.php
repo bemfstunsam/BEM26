@@ -45,6 +45,9 @@
                     <a href="index.php?page=berita" class="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors duration-300 shadow-sm">Berita</a>
                     <a href="index.php?page=program-kerja" class="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors duration-300 shadow-sm">Program Kerja</a>
                     <a href="index.php?page=profil" class="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors duration-300 shadow-sm">Profil</a>
+                    <a href="index.php?page=suic" class="px-4 py-2 bg-white hover:bg-gray-100 text-gray-900 text-sm font-bold rounded-lg transition-colors duration-300 shadow-sm flex items-center gap-1.5">
+                        🏆 SUIC 2026
+                    </a>
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-white focus:outline-none">
@@ -58,6 +61,7 @@
                 <a href="index.php?page=berita" class="block py-2.5 px-4 text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg text-center shadow-sm">Berita</a>
                 <a href="index.php?page=program-kerja" class="block py-2.5 px-4 text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg text-center shadow-sm">Program Kerja</a>
                 <a href="index.php?page=profil" class="block py-2.5 px-4 text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg text-center shadow-sm">Profil</a>
+                <a href="index.php?page=suic" class="block py-2.5 px-4 text-sm font-bold text-gray-900 bg-white hover:bg-gray-100 rounded-lg text-center shadow-sm">🏆 SUIC 2026</a>
             </div>
         </nav>
     </header>
